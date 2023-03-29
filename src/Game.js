@@ -1,7 +1,8 @@
-import * as THREE from '../../libs/three137/three.module.js';
-import { LoadingBar } from '../../libs/LoadingBar.js';
+import * as THREE from '../libs/three137/three.module.js';
+import { LoadingBar } from '../libs/LoadingBar.js';
 import { Plane } from './Plane.js';
 import { Obstacles } from './Obstacles.js';
+import {OrbitControls} from '../libs/three137/OrbitControls.js';
 
 class Game{
 	constructor(){
@@ -35,6 +36,8 @@ class Game{
         this.renderer.outputEncoding = THREE.sRGBEncoding;
 		container.appendChild( this.renderer.domElement );
         
+        const controls = new OrbitControls(this.camera,this.renderer.domElement)
+
         this.active = false;
         this.load();
 
