@@ -51,7 +51,7 @@ class Obstacles{
 		// Load a glTF resource
 		loader.load(
 			// resource URL
-			'rocket2.glb',
+			'bomb.glb',
 			// called when the resource is loaded
 			gltf => {
 
@@ -142,7 +142,7 @@ class Obstacles{
 			collisionObstacle.children.some( child => {
 				child.getWorldPosition(this.tmpPos);
 				const dist = this.tmpPos.distanceToSquared(pos);
-				if (dist<5){
+				if (dist<25){
 					collisionObstacle.userData.hit = true;
 					this.hit(child);
                     return true;
